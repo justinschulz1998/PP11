@@ -90,9 +90,10 @@ In this exercise you will:
 
 #### Reflection Questions
 
-1. **How do you link `prev` and `next` pointers correctly using a static array?**
-2. **What are advantages and limitations of compile-time vs. dynamic allocation?**
-3. **How would you extend this static list to include additional data fields?**
+1. **How do you link `prev` and `next` pointers correctly using a static array? Folgende Zeilen nodes[i].prev = (i > 0) ? &nodes[i - 1] : NULL;  nodes[i].next = (i < 4) ? &nodes[i + 1] : NULL; Hier werden auf die Speicherbereiche zugegriffen und explizit hoch und runter gezählt**
+2. **What are advantages and limitations of compile-time vs. dynamic allocation? Bei der kompilierzeit zuordnung gibt es kein Flexibilität und eine feste Größe. Hat dann den Vorteil das diese Schnelelr arbeitet aber jedoch mehr Speicherplatz wegnimmt wenn der Speicherbereich nicht komplett genutzt wird **
+3. **How would you extend this static list to include additional data fields?
+DIe Struct DNode erweitern um weitere Datenmengen**
 
 ---
 
@@ -158,9 +159,9 @@ In this exercise you will:
 
 #### Reflection Questions
 
-1. **Why is `malloc` necessary when adding nodes dynamically?**
-2. **How can you traverse the list to print each node’s address and value?**
-3. **What are the consequences of not freeing the list before exit?**
+1. **Why is `malloc` necessary when adding nodes dynamically? Weil hier ja die ANzahl beziehungweise Größe nich^t bekannt ist und diese dinamisch bestimmt werden muss. SOmit eignet sich ein Array mit einem festen Speicherbereich nicht**
+2. **How can you traverse the list to print each node’s address and value? INdem man mit eienr Schleife die einzelnen **dresen durchläuft und den Wert hinter dieser Adresse speichert oder ausgibt.** 
+3.**What are the consequences of not freeing the list before exit? Bei großen Programmen kann das zu mangelnden Speicher füren und evtl zu einem Absturz**.
 
 ---
 
